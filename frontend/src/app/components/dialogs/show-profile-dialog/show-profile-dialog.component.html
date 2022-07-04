@@ -1,0 +1,16 @@
+<h3> Create or Edit your profile: </h3>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">    
+    <p>
+      <label for="role">role: </label>
+      <input id="role" type="text" formControlName="role">      
+    </p>
+    <p>
+      <label for="info">info: </label>
+      <input id="info" type="text" formControlName="info">      
+    </p>
+    <p>
+      <label for="image">Image: </label>
+      <input id="image" type="file" (change)="addFileToForm($event)">      
+    </p>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>

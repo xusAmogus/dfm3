@@ -1,0 +1,29 @@
+<div class="box">
+    <div class="sidebar"></div>
+    <div class="main">
+        <div class="row">
+            <div class="gadget"></div>
+            <div class="gadget"></div>
+            <div class="gadget"></div>
+        </div>
+        <div class="row">
+            <div class="content">
+                <h3>{{ writeup.title }}</h3>
+                <h4> {{ writeup.subTitle }}</h4>
+                <p> {{writeup.content }}</p>
+            </div>
+            <div class="gadget">
+                <h3> Links </h3>
+                <p> {{writeup.link }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="gadget"></div>
+            <div class="gadget"></div>
+            <div class="gadget"></div>
+        </div>
+    </div>
+    
+
+<router-outlet></router-outlet>
+</div>

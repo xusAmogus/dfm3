@@ -1,0 +1,28 @@
+.box {
+    width:100vw;
+    height:88vh;
+    margin:0;
+    padding: 0;    
+    background-image: linear-gradient(to left,rgba(0,255,0,0),rgba(0,110,155,1));
+    display:flex;
+}
+
+.sidebar {
+    width:25%;    
+    background-color: rgba(211, 197, 197, 0.5);
+}
+
+.main {
+    width:100%;
+    background-color: rgba(50,50,50,0.5);
+}
+
+.gadget {
+    width:20vw;
+    height:30vh;
+    background-color: rgba(7, 9, 114, 0.5);
+    margin: 2px;
+    padding:5px;
+    border:1px solid white;
+    border-radius:2%;
+}

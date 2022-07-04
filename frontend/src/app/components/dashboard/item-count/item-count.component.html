@@ -1,0 +1,34 @@
+<mat-card class="card ms-2 mt-2">
+    <mat-card-header>
+      <div mat-card-avatar [style.backgroundImage]="'url('+imgUrl+')'" class="header-image"></div>
+      <mat-card-title>Completed Items</mat-card-title>
+      <mat-card-subtitle>Daily, weekly and monthly completed items</mat-card-subtitle>
+    </mat-card-header>    
+    <mat-card-content>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Interval:</mat-label>
+          <mat-select [(value)]="selected" (selectionChange)="getItemsPerInterval($event);setInterval($event)">
+            <mat-option *ngFor="let option of intervals" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </p>
+      <p>      
+        <mat-chip-list class="chiplist" aria-label="items completed today">
+          <span>Items completed: 
+            <mat-chip>         
+                {{countable.count}}
+            </mat-chip>
+          </span>                  
+        </mat-chip-list>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-fab color="primary" aria-label="icon button with a graph">
+        <mat-icon>show_chart</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  

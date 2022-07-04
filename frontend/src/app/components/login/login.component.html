@@ -1,0 +1,18 @@
+<div class="container bg-dark">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">        
+        <div class="form-group">
+            <label for="email">E-mail: </label>
+            <input (change)="validate(loginForm.form)" type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email" ngModel #email="ngModel">
+        </div>
+        <div class="form-group">
+            <label for="password">Password: </label>
+            <input (change)="validate(loginForm.form)" type="text" class="form-control" id="password" required [(ngModel)]="user.password" name="password" ngModel #password="ngModel">
+        </div>
+        
+        <button class="btn btn-outline-success my-1" type="submit" [hidden]="!loginForm.form.valid">
+            Save
+        </button>
+    </form>
+    <div [ngClass]="classes" [hidden]="hide">{{ msg }}</div>
+</div>
+

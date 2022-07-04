@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>Edit backlog item:</h1>
+<div mat-dialog-content>
+    <form [formGroup]="backlogForm" id="edit-form" class="edit-form">   
+        <mat-form-field appearance="fill">
+            <mat-label>Title:</mat-label>
+            <input matInput formControlName="title">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category">
+                <mat-option *ngFor="let category of categories" [value]="category">
+                {{ category }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Priority</mat-label>
+            <mat-select formControlName="priority">
+                <mat-option *ngFor="let priority of priorities" [value]="priority">
+                {{ priority }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Description:</mat-label>
+            <input matInput formControlName="description">
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button class="btn btn-default btn-outline btn-info" [disabled]="!backlogForm.valid" type="submit" (click)="submit()">Submit</button>  
+</div>
+
+

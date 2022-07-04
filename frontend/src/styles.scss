@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+@font-face {
+    font-family: 'Bodidota';
+    src: url(assets/fonts/Bodidota.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Minimal';
+    src: url(assets/fonts/Minimal.ttf) format('truetype');
+}
+$base-bg-color: rgb(30, 34, 37);
+$base-font: 'Minimal';
+
+html, body {
+    background-color: $base-bg-color !important;
+    font-family: $base-font;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgb(136, 135, 135);
+    color: white;
+
+}
+.mat-table {
+    opacity: 0.8;
+    font-family: $base-font !important;    
+}
+.mat-dialog-container  {
+    box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%),
+                0px 24px 38px 3px rgb(0 0 0 / 14%), 
+                0px 9px 46px 8px rgb(0 0 0 / 12%);
+    color: white;
+    opacity: 0.8;
+    background-color: $base-bg-color !important;
+    font-family: $base-font !important;
+    display:flex !important;
+    flex-direction: column !important;
+}
+.mat-form-field {
+    width:90%;
+    font-family: $base-font !important;    
+}
+
+.mat-header-cell {
+    font-size:22px!important;
+    font-weight: 900!important;
+    font-variant: small-caps;
+}
+.mat-cell {
+    font-size:20px!important;
+}

@@ -1,0 +1,15 @@
+<mat-toolbar class="navbar navbar-dark bg-dark">       
+    <app-menu></app-menu>
+    <ng-container class="logged-in" *ngIf="loggedIn">        
+        <div class="sub-menu-right">
+            <button mat-mini-fab color="warn" aria-label="logout button with icon"
+            (click)="logout()" class="btn btn-outline-info mx-1" type="button">
+              <mat-icon>logout</mat-icon>
+            </button>
+            <app-profile [profile]="profile"></app-profile>
+        </div>
+    </ng-container>  
+</mat-toolbar>
+<router-outlet></router-outlet>
+
+  
