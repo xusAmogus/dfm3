@@ -40,6 +40,7 @@ import { ShowComponent } from './components/writeup/show/show.component';
 import { IndexComponent } from './components/writeup/index/index.component';
 import { CreateOrEditComponent } from './components/writeup/create-or-edit/create-or-edit.component';
 import { MenuComponent } from './components/navbar/menu/menu.component';
+import { BacklogCreateComponent } from './components/backlog/backlog-create/backlog-create.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { MenuComponent } from './components/navbar/menu/menu.component';
     ShowComponent,
     IndexComponent,
     CreateOrEditComponent,
-    MenuComponent,     
+    MenuComponent,
+    BacklogCreateComponent,     
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { BacklogService } from 'src/app/services/backlog.service';
 import { HelperService } from 'src/app/services/helper.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/interfaces/user';
+import { Router } from '@angular/router';
 
 
 
@@ -30,8 +31,9 @@ export class CreateBacklogDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public backlog: Backlog,
     private fb: FormBuilder, 
     private backlogService : BacklogService, 
-    private helper: HelperService,
-    private userService: UserService
+    private router: Router,
+    private userService: UserService,
+    private helperService: HelperService
     ) { }
 
   ngOnInit(): void {
@@ -42,7 +44,10 @@ export class CreateBacklogDialogComponent implements OnInit {
     this.backlogService.create(this.backlogForm.value).subscribe({
       next(res){ 
         _this.dialogRef.close();        
-        _this.helper.reloadCurrentRoute();
+        _this.router.navigate(['dashboard/backlog']).then(() => {
+          _this.helperService.reloadCurrentRoute();
+        });
+      
       },
       error(res) { console.log(res)}
     });
