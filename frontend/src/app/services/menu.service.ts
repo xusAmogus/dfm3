@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 import { MenuItem } from '../interfaces/menu/menu-item';

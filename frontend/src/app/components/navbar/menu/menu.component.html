@@ -4,7 +4,7 @@
 <mat-menu #menu="matMenu" class="menu">
   <div class="sub-menu-left">        
       <ng-container *ngFor="let item of items">
-        <button mat-menu-item [routerLink]="item.path" routerLinkActive="router-link-active" >
+        <button mat-menu-item (click)="navigate(item.path)" routerLinkActive="router-link-active" >
           <mat-icon>{{item.icon}}</mat-icon>
           <span>{{item.name}}</span>
         </button>

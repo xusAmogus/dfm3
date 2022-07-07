@@ -31,19 +31,17 @@ export class BacklogComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuService.setItems([
-      { path:'dashboard/backlog/index', name:'show all', icon:'list'},
-      { path:'dashboard/backlog/create', name:'create', icon:'create'}
+      { path:'dashboard/backlog', name:'show all', icon:'list'},
+      { path:'dashboard/backlog/create', name:'create', icon:'create'},
+      { path:'dashboard', name:'Dashboard', icon:'dashboard'}
     ]);
-    this.backlogService.index().subscribe((data: Backlog[])=>{
-       
-       this.dataSource.data  = data;
-         
+    this.backlogService.index().subscribe((data: Backlog[])=>{       
+       this.dataSource.data  = data;         
     })
     this.dataSource.sort = this.sort
   }
 
-  edit(backlog:Backlog){
-    
+  edit(backlog:Backlog){    
     this.dialog.open(EditBacklogDialogComponent,{
       width:'66%',
       height: '66%',
@@ -68,7 +66,9 @@ export class BacklogComponent implements OnInit {
   }
 
   backlogChanged(value: Backlog) {
-    this.backlogChangedEvent.emit(value);
-    console.log(this.backlogChangedEvent.emit(value));
+    this.backlogChangedEvent.emit(value);    
+  }
+  ngOnDestroy(): void {
+    this.menuService.clear();
   }
 }

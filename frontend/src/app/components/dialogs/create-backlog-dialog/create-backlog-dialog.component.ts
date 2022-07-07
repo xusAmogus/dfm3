@@ -8,8 +8,6 @@ import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/interfaces/user';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-create-backlog-dialog',
   templateUrl: './create-backlog-dialog.component.html',

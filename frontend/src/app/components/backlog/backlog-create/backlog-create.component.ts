@@ -16,5 +16,5 @@ export class BacklogCreateComponent implements OnInit {
     let dialogRef = this.dialog.open(CreateBacklogDialogComponent,{});
     dialogRef.afterClosed().subscribe(_ => this.router.navigate(['dashboard/backlog']));
   }
-
+  
 }

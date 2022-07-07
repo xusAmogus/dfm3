@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Backlog } from 'src/app/interfaces/backlog';
 import { BacklogService } from 'src/app/services/backlog.service';
 import { MenuService } from 'src/app/services/menu.service';
@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     let _this = this;
-    
+    this.menuService.clear();
     this.menuService.setItems([
       { path:'dashboard/backlog', name:'backlog', icon:'dashboard'},
       { path:'dashboard/writeup', name:'writeup', icon:'create'}

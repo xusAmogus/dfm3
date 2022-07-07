@@ -17,6 +17,7 @@ const routes: Routes = [
       children: [        
         { path: 'backlog', component: BacklogComponent,
           children: [
+            //child for dialog
             { path: 'create', component: BacklogCreateComponent },
            
           ]
@@ -33,7 +34,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})],
+  imports: [RouterModule.forRoot(routes,{ enableTracing: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

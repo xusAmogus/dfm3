@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MenuItem } from 'src/app/interfaces/menu/menu-item';
 import { User } from 'src/app/interfaces/user';
 import { Profile } from 'src/app/interfaces/user/profile';
+import { HelperService } from 'src/app/services/helper.service';
 import { MenuService } from 'src/app/services/menu.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -22,7 +23,8 @@ export class MenuComponent implements OnInit {
   constructor(
     private userService: UserService, 
     private router: Router,    
-    private menuService: MenuService
+    private menuService: MenuService,
+    private helperService:HelperService
     ) { 
     let _this = this;
     this.user = {
@@ -58,11 +60,14 @@ export class MenuComponent implements OnInit {
         _this.items = res
       }
     })
- 
+    console.log(this.items)
   }
 
-  navigate(route:any) {    
-    return this.router.navigate([route]);    
+  navigate(route:any) {
+     
+    return this.router.navigate([route]).then(() => {
+      this.helperService.reloadCurrentRoute();
+    });    
   }
 
   logout() {

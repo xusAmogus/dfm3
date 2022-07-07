@@ -33,4 +33,8 @@ export class IndexComponent implements OnInit {
   showWriteUp(id:number) {
     this.router.navigate(['dashboard/writeup/show/', id])
   }
+  
+  ngOnDestroy(): void {
+    this.menuService.clear();
+  }
 }
